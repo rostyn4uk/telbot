@@ -14,7 +14,7 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/start/, (msg, match) => {
     // Составляем сообщение, которое будет содержать имя и фамилию того,
     // кто взаимодействует с ботом
-    var message = 'Hello, My name '+ myName + ' My id ' + myId + 'My Username ' + myUsername + ' ' + msg.chat.first_name;
+    var message = 'Hello, ' + msg.chat.first_name;
 
     // отсылаем сообщение, первым параметром передавая id чата,
     // а вторым уже само сообщение
