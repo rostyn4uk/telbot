@@ -10,9 +10,9 @@ const bot = new TelegramBot(token, { polling: true });
 bot.onText(/\/start/, (msg, match) => {
     // Составляем сообщение, которое будет содержать имя и фамилию того,
     // кто взаимодействует с ботом
-    var message = 'Привет ' + msg.chat.first_name;
+    var message = 'Привіт, Вас вітає  %s!'+ me.first_name + ' Мій id' + me.id + msg.chat.first_name;
 
     // отсылаем сообщение, первым параметром передавая id чата,
     // а вторым уже само сообщение
     bot.sendMessage(msg.chat.id, message);
-});
+}); 
