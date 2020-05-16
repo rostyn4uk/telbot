@@ -16,6 +16,23 @@ bot.onText(/\/start/, (msg, match) => {
     // а вторым уже само сообщение
     bot.sendMessage(msg.chat.id, message);
 });
+
+bot.onText(/\/end/, (msg, match) => {
+    // Составляем сообщение, которое будет содержать имя и фамилию того,
+    // кто взаимодействует с ботом
+    var message = 'Бувайте, ' + msg.chat.first_name;
+    //console.log(msg);
+    // отсылаем сообщение, первым параметром передавая id чата,
+    // а вторым уже само сообщение
+    bot.sendMessage(msg.chat.id, message);
+});
+
+bot.onText(/\/id/, (msg, match) => {
+    var message = 'ID, ' + msg.chat.id;
+    bot.sendMessage(msg.chat.id, message);
+});
+
+
 function sendMessageByBot(aChatId, aMessage){
     bot.sendMessage(aChatId, aMessage, { caption: 'I\'m a cute bot!' });
 }
